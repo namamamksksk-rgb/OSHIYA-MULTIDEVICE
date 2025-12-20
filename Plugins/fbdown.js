@@ -60,12 +60,12 @@ cmd(
 
       // Prepare and send the message with video details
       let desc = `
-*❤️ ROBIN FB VIDEO DOWNLOADER ❤️*
+*❤️ OSHIYA FB VIDEO DOWNLOADER ❤️*
 
 👻 *Title*: ${title || "Unknown"}
 👻 *Quality*: ${hd ? "HD Available" : "SD Only"}
 
-𝐌𝐚𝐝𝐞 𝐛𝐲 𝐒_𝐈_𝐇_𝐈_𝐋_𝐄_𝐋
+MADE BY OSHIYA
         `;
       await robin.sendMessage(
         from,
