@@ -60,18 +60,17 @@ cmd(
 
       // Prepare and send the message with video details
       let desc = `
-*❤️ ROBIN FB VIDEO DOWNLOADER ❤️*
+*💐OSHIYA FB VIDEO DOWNLOADER💐*
 
-👻 *Title*: ${title || "Unknown"}
 👻 *Quality*: ${hd ? "HD Available" : "SD Only"}
 
-𝐌𝐚𝐝𝐞 𝐛𝐲 𝐒_𝐈_𝐇_𝐈_𝐋_𝐄_𝐋
+> *@OSHADHA MANUPPRIYA*
         `;
       await robin.sendMessage(
         from,
         {
           image: {
-            url: "https://raw.githubusercontent.com/Dark-Robin/Bot-Helper/refs/heads/main/autoimage/Bot%20fb-1.jpg",
+            url: "https://raw.githubusercontent.com/oshadha12345/images/refs/heads/main/bot_menu.png",
           },
           caption: desc,
         },
@@ -99,7 +98,7 @@ cmd(
         return reply("*No downloadable video found!* 🌚");
       }
 
-      return reply("*Thanks for using my bot* 🌚❤️");
+      return reply("*Thanks for using Oshiya-Md* 🌚❤️");
     } catch (e) {
       console.error(e);
       reply(`*Error:* ${e.message || e}`);
