@@ -105,7 +105,6 @@ cmd(
 `;
     await robin.sendPresenceUpdate('recording', from);
     await robin.sendMessage(from, { audio: { url: "https://github.com/oshadha12345/images/raw/refs/heads/main/Voice/paro%20%C3%97%20kompa%20parano%20(slowed)%20-%20NEJ_%20%C3%97%20frozy%20%5Bedit%20audio%5D(MP3_160K).mp3" }, mimetype: 'audio/mpeg', ptt: true }, { quoted: mek });
-    await robin.sendMessage(from,{sticker: { url : "https://raw.githubusercontent.com/oshadha12345/images/refs/heads/main/sticker/STK-20251107-WA0012.webp"},package: 'OSHADHA'},{ quoted: mek })
       await robin.sendMessage(
         from,
         {
