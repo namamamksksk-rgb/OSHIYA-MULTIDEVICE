@@ -103,8 +103,6 @@ cmd(
 ║   𝐎𝐓𝐇𝐄𝐑 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒 📚
 ╚═════════════════╯
 `;
-    await robin.sendPresenceUpdate('recording', from);
-    await robin.sendMessage(from, { audio: { url: "https://github.com/oshadha12345/images/raw/refs/heads/main/Voice/paro%20%C3%97%20kompa%20parano%20(slowed)%20-%20NEJ_%20%C3%97%20frozy%20%5Bedit%20audio%5D(MP3_160K).mp3" }, mimetype: 'audio/mpeg', ptt: true }, { quoted: mek });
       await robin.sendMessage(
         from,
         {
