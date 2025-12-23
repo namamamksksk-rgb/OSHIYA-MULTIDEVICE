@@ -100,7 +100,7 @@ async function connectToWA() {
       });
       robin.sendMessage("94725364886@s.whatsapp.net", {
         image: {
-          url: `https://raw.githubusercontent.com/oshadha12345/images/refs/heads/main/canect.jpg`,
+          url: ``,
         },
         caption: up1,
       });
