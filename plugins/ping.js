@@ -4,6 +4,7 @@ const { runtime } = require('../lib/functions');
 
 cmd({
     pattern: "ping",
+    react: "🚀",
     desc: "Check bot's response speed.",
     category: "main",
     filename: __filename
