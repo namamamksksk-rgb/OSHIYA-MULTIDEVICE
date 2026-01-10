@@ -1,57 +1,51 @@
 const { cmd } = require('../command');
 const config = require('../config');
+
 cmd({
     pattern: "menu",
-    react: "👨‍💻",
-    desc: "Interactive Menu with Date, Time and Voice",
+    react: "📃",
+    desc: "Interactive Menu with User & Owner info.",
     category: "main",
     filename: __filename
 },
 async(conn, mek, m, { from, pushname, reply }) => {
 try {
-    // දවස සහ වෙලාව ගන්න එක
+    // දවස, දිනය සහ වෙලාව සෙට් කරගැනීම
     const date = new Date().toLocaleDateString('en-GB')
-    const time = new Date().toLocaleTimeString('en-US', { hour12: true, hour: '2-digit', minute: '2-digit' })
     const day = new Date().toLocaleDateString('en-US', { weekday: 'long' })
+    const time = new Date().toLocaleTimeString('en-US', { hour12: true, hour: '2-digit', minute: '2-digit' })
 
-    const menuText = `හලෝ ${pushname}! 👋
-    
+    const menuText = `👋 හලෝ *${pushname}*!
+
 📅 *අද දිනය:* ${date} (${day})
-⏰ *දැන් වෙලාව:* ${time}
+⏰ *වෙලාව:* ${time}
 
-ඔන්න මගේ Menu එක... 🚀
+👤 *Bot Owner:* Oshadha Manuppriya
+📞 *Owner No:* 0756599952
 
-1. 📂 DOWNLOADS
-2. 🎬 MEDIA
-3. ⚙️ SETTINGS
+*OSHIYA MD MAIN MENU*
+--------------------------
+⚡ .alive - Bot Status
+🚀 .ping - Check Speed
 
-*OSHIYA MD SPEED*`
+*Click the button below for more info!*`
 
-    // Alive වලට යන බටන් එක
+    // Quick Reply Button එක
     const buttons = [
-        {buttonId: '.alive', buttonText: {displayText: 'Go to Alive ⚡'}, type: 1}
+        { buttonId: '.help', buttonText: { displayText: 'HELP MENU ❓' }, type: 1 }
     ]
 
     const buttonMessage = {
         text: menuText,
-        footer: "Select an option or click Alive",
+        footer: "Powered by Oshiya Md",
         buttons: buttons,
         headerType: 1
     }
 
-    // Menu මැසේජ් එක යවනවා
-    await conn.sendMessage(from, buttonMessage, { quoted: mek })
-
-    // Voice Message එක යවනවා
-    // උඹේ voice file එකක link එකක් හරි path එකක් හරි මෙතනට දාපන්
-    return await conn.sendMessage(from, { 
-        audio: { url: 'https://github.com/oshadha12345/images/raw/refs/heads/main/Voice/Bully%20Maguire%20edit%20%F0%9F%97%BF_%20Parano%20(Slowed)%20_(MP3_160K).mp3' }, 
-        mimetype: 'audio', 
-        ptt: true 
-    }, { quoted: mek })
+    return await conn.sendMessage(from, buttonMessage, { quoted: mek })
 
 } catch (e) {
     console.log(e)
-    reply(`වැඩේ ගැස්සුණා බං: ${e}`)
+    reply(`අයියෝ වැඩේ ගැස්සුණා බං: ${e}`)
 }
 })
