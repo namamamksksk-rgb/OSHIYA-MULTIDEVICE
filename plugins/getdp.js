@@ -1,28 +1,15 @@
-const { cmd } = require('../command')
-
+const { cmd } = require("../command");
 cmd({
     pattern: "getdp",
-    react: "👻",
-    desc: "Download user's Profile Picture",
-    category: "main",
+    react: "👤",
+    desc: "Get profile picture",
+    category: "media",
     filename: __filename
-},
-async(conn, mek, m, { from, quoted, body, isCmd, command, args, q, reply }) => {
-try {
-    let user = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : q.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
-    if (!user) return reply("කාගේ හරි DP එකක් ගන්න නම්බර් එකක් හරි, Mention එකක් හරි, reply එකක් හරි දියන් මචං! 🧐")
-
-    let ppUrl;
+}, async (zanta, mek, m, { from, q, reply, mentionUser }) => {
     try {
-        ppUrl = await conn.profilePictureUrl(user, 'image')
-    } catch {
-        return reply("අයියෝ.. ඒකේ DP එකක් පේන්න නැහැ බං! 😅 (සමහරවිට privacy දාලා ඇති)")
-    }
-
-    return await conn.sendMessage(from, { image: { url: ppUrl }, caption: `*OSHIYA MD - DP DOWNLOADER* ✅` }, { quoted: mek })
-
-} catch (e) {
-    console.log(e)
-    reply(`වැඩේ ගැස්සුණා මචං: ${e}`)
-}
-})
+        let targetJid = mentionUser[0] || (m.quoted ? m.quoted.sender : from);
+        const url = await zanta.profilePictureUrl(targetJid, 'image');
+        if (!url) return reply("❌ No DP found.");
+        await zanta.sendMessage(from, { image: { url }, caption: "*✅ Done!*" }, { quoted: mek });
+    } catch (e) { reply("🚨 Error: " + e.message); }
+});
