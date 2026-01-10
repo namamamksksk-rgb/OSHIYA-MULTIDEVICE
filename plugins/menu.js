@@ -2,6 +2,7 @@ const { cmd } = require('../command');
 const config = require('../config');
 cmd({
     pattern: "menu",
+    react: "👨‍💻",
     desc: "Interactive Menu with Date, Time and Voice",
     category: "main",
     filename: __filename
@@ -44,7 +45,7 @@ try {
     // Voice Message එක යවනවා
     // උඹේ voice file එකක link එකක් හරි path එකක් හරි මෙතනට දාපන්
     return await conn.sendMessage(from, { 
-        audio: { url: 'https://www.myinstants.com/media/sounds/hello-there.mp3' }, 
+        audio: { url: 'https://github.com/oshadha12345/images/raw/refs/heads/main/Voice/Bully%20Maguire%20edit%20%F0%9F%97%BF_%20Parano%20(Slowed)%20_(MP3_160K).mp3' }, 
         mimetype: 'audio', 
         ptt: true 
     }, { quoted: mek })
