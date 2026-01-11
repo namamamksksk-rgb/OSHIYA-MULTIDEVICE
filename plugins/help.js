@@ -23,7 +23,7 @@ try {
             externalAdReply: {
                 title: "Contact Oshadha Manuppriya",
                 body: "Click the button to chat on WhatsApp",
-                thumbnailUrl: "https://i.ibb.co/3YhV0Xy/menu-bg.jpg", 
+                thumbnailUrl: "https://raw.githubusercontent.com/oshadha12345/images/refs/heads/main/oshiyaping.jpg", 
                 sourceUrl: `https://wa.me/+94756599952`,
                 mediaType: 1,
                 renderLargerThumbnail: true
