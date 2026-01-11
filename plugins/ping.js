@@ -12,7 +12,7 @@ cmd({
 async(conn, mek, m, { from, reply }) => {
 try {
     const startTime = Date.now()
-    const msg = await reply("Checking Speed... 🚀")
+    const msg = await reply("*Checking Speed*... 🚀")
     const endTime = Date.now()
     const ping = endTime - startTime
 
