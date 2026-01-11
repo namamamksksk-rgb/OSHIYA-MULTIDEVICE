@@ -30,7 +30,7 @@ try {
 *─── CATEGORIES ───*
 
 📥 *DOWNLOADER*
-   .fb, .tiktok, .song, .video
+   .fb, .tiktok, .song, .video, .getdp
 
 🎨 *GRAPHICS*
    .genimg, .sticker
