@@ -2,42 +2,37 @@ const { cmd } = require('../command')
 
 cmd({
     pattern: "help",
-    react: "📱",
-    desc: "Show bot help and owner info.",
+    desc: "Get owner information and contact link.",
     category: "main",
     filename: __filename
 },
 async(conn, mek, m, { from, reply }) => {
 try {
-    const helpMsg = `*─── OSHIYA MD HELP ───*
+    const ownerName = "Oshadha Manuppriya"
+    const ownerNumber = "94756599952" 
 
-👤 *Owner:* Oshadha Manuppriya
-📞 *Number:* 0756599952
+    let helpMsg = `👋 *NEED HELP? CONTACT OWNER* 🛡️\n\n`
+    helpMsg += `👤 *Owner:* ${ownerName}\n`
+    helpMsg += `📞 *WhatsApp:* +${ownerNumber}\n\n`
+    helpMsg += `✨ *Oshiya MD Multi-Device* ✨\n`
+    helpMsg += `Type *.menu* to see all my commands!`
 
-*Commands List:*
-1. .song - Download Songs
-2. .video - Download Videos
-3. .genimg - AI Images
-4. .alive - Check Bot Status
-
-*Type a number or click the button below!*`
-
-    // Buttons Setup
-    const buttons = [
-        { buttonId: '.alive', buttonText: { displayText: 'Alive ⚡' }, type: 1 }
-    ]
-
-    const buttonMessage = {
+    return await conn.sendMessage(from, {
         text: helpMsg,
-        footer: "Powered by Asitha MD",
-        buttons: buttons,
-        headerType: 1
-    }
-
-    return await conn.sendMessage(from, buttonMessage, { quoted: mek })
+        contextInfo: {
+            externalAdReply: {
+                title: "Contact Oshadha Manuppriya",
+                body: "Click the button to chat on WhatsApp",
+                thumbnailUrl: "https://i.ibb.co/3YhV0Xy/menu-bg.jpg", 
+                sourceUrl: `https://wa.me/${ownerNumber}`,
+                mediaType: 1,
+                renderLargerThumbnail: true
+            }
+        }
+    }, { quoted: mek })
 
 } catch (e) {
     console.log(e)
-    reply(`වැඩේ අවුල් වුණා මචං: ${e}`)
+    reply(`Help එක දාද්දි පොඩි අවුලක් වුණා: ${e.message}`)
 }
 })
