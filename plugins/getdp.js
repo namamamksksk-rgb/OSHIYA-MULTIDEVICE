@@ -17,13 +17,13 @@ async (conn, mek, m, { from, reply, quoted }) => {
         try {
             ppUrl = await conn.profilePictureUrl(user, 'image')
         } catch {
-            return reply("අයියෝ! මේ user DP එකක් දාලා නැහැ නැත්නම් මට බලන්න බෑ. 🚫")
+            return reply("*Hey! This user hasn't posted a DP or I can't see it* 🚫")
         }
 
         // DP එක image එකක් විදිහට යවනවා
         await conn.sendMessage(from, { 
             image: { url: ppUrl }, 
-            caption: `✅ *DP Downloaded Successfully!*\n✨ *Requested by Oshadha*` 
+            caption: `✅ *DP Download Successfully!*\n✨ *Powner by Oshiya md*` 
         }, { quoted: mek })
 
     } catch (e) {
