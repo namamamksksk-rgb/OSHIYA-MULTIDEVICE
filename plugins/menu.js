@@ -3,7 +3,7 @@ const config = require('../config');
 
 cmd({
     pattern: "menu",
-    react: "💸",
+    react: "📜",
     desc: "Advanced colorful menu with voice and image.",
     category: "main",
     filename: __filename
@@ -37,6 +37,9 @@ try {
 
 🛠️ *TOOLS*
    .wiki, .weather, .ping
+
+⚙️ *SETTINGS*
+   .react on/off,read on/off
 
 *Powered by Oshiya Md*`
 
