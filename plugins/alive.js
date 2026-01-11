@@ -2,7 +2,7 @@ const { cmd } = require('../command')
 
 cmd({
     pattern: "alive",
-    react: "📌",
+    react: "🗂",
     desc: "Check if the bot is active with full details.",
     category: "main",
     filename: __filename
