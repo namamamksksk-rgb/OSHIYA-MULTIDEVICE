@@ -22,18 +22,20 @@ try {
     }, { quoted: mek })
 
     // Alive මැසේජ් එක
-    let aliveMsg = `👋 *HELLO ${pushname.toUpperCase()}!* I'M ALIVE! 🛡️
-
-📅 *Day:* ${day}
-📆 *Date:* ${date}
-⏰ *Time:* ${time}
-👤 *User:* ${pushname}
-
-✨ *Oshiya MD is running smoothly!*
-Type *.menu* to see what I can do.
-
-🛡️ *Owner:* Oshadha Manuppriya
-🚀 *Version:* 2.0.1`
+    let aliveMsg = `╭━━〔 *OSHIYA* 〕━━⬣
+│
+├ 📅 *Day:* ${day}
+├ 📅 *Date:* ${date}
+├ 👤 *User:* ${pushname}
+├ ⚡ *Status:* ✅ *Online* 
+│
+├ 🔧 *Prefix:* .
+├ 💬 *Commands:* *Menu/all..*
+│
+├ 🤖 *Bot By:* *OSHIYA-〽️D*
+├ 🛠️ *Powered By:* *OSHIYA TEAM*
+│
+╰━━〔 *OSHIYA ALIVE* 〕━━⬣`
 
     // 2. Image එකත් එක්ක මැසේජ් එක යවනවා
     return await conn.sendMessage(from, {
