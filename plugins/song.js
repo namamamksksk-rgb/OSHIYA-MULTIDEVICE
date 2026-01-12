@@ -2,25 +2,32 @@ const { ytdl } = require('@bochilteam/scraper');
 
 module.exports = {
   pattern: 'ytmp3',
-  alias: ['song', 'youtubeaudio'],
+  alias: ['song', 'mp3'],
   react: "🎵",
   category: 'downloader',
-  desc: 'Download YouTube audio by URL or search',
-  use: '<url or search>',
+  desc: 'Download YouTube MP3 by search or link',
+  use: '<song name or YouTube link>',
   async exec(m, conn, { text }) {
-    if (!text) return m.reply('🔍 උදාහරණයක්: .ytmp3 Despacito');
+    if (!text) return m.reply('🎵 *Please enter a YouTube link or song name.*');
+
     try {
       const result = await ytdl(text);
       const { title, audio, thumbnail } = result;
 
-      await conn.sendMessage(m.chat, { image: { url: thumbnail }, caption: `🎶 *Title:* ${title}` );
+      await conn.sendMessage(m.chat, {
+        image: { url: thumbnail },
+        caption: `🎧 *Title:*Downloading your song...*`
+      ,  quoted: m );
+
       await conn.sendMessage(m.chat, 
         audio:  url: audio.url ,
         mimetype: 'audio/mp4',
         fileName: `{title}.mp3`
       }, { quoted: m });
-    } catch (e) {
-      m.reply('❌ Download එකේදී දෝෂයක් ඇතිවුණා.');
+
+    } catch (err) {
+      console.error(err);
+      m.reply('❌ *Error downloading the song. Please try again later.*');
     }
   }
 };
