@@ -94,7 +94,7 @@ async function connectToWA() {
 
       robin.sendMessage(ownerNumber + "@s.whatsapp.net", {
         image: {
-          url: `https://raw.githubusercontent.com/oshadha12345/images/refs/heads/main/oshiyaping.jpg`,
+          url: `https://raw.githubusercontent.com/oshadha12345/images/refs/heads/main/20251223_061012.jpg`,
         },
         caption: up,
       });
