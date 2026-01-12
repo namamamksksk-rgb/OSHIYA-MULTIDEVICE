@@ -89,8 +89,17 @@ async function connectToWA() {
       console.log("🎭 OSHIYA-MD installed successful ✅");
       console.log("🎭 OSHIYA-MD connected to whatsapp ✅");
 
-      let up = `👨‍💻 *OSHIYA-MD MULTIDEVICE BOT* 👨‍💻\n🛡️ 𝐁𝐨𝐭 𝐂𝐨𝐧𝐧𝐞𝐜𝐭𝐞𝐝 𝐬𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲 🛡️\n🛡️ 𝐔𝐬𝐞 𝐌𝐞𝐧𝐮 𝐀𝐧𝐝 𝐎𝐭𝐡𝐞𝐫 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 🛡️\n🌹 ᴛʜᴀɴᴋ ʏᴏᴜ 🌹\n> *@ ᴏꜱʜᴀᴅʜᴀ ᴍᴀɴᴜᴘᴘʀɪʏᴀ* 👑`;
-      let up1 = `🌀 𝘏𝘌𝘓𝘓𝘖 𝘖𝘚𝘏𝘈𝘋𝘏𝘈 🌀\n\n𝘐 𝘔𝘈𝘋𝘌 𝘠𝘖𝘜𝘙 𝘞𝘈 𝘉𝘖𝘛 🤖\n\n🌹ᴛʜᴀɴᴋ ʏᴏᴜ 🌹`;
+      let up = `👨‍💻 *OSHIYA-MD MULTIDEVICE BOT* 👨‍💻\n🛡️ 𝐁𝐨𝐭 𝐂𝐨𝐧𝐧𝐞𝐜𝐭𝐞𝐝 𝐬𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲\n🛡️ 𝐔𝐬𝐞 𝐌𝐞𝐧𝐮 𝐀𝐧𝐝 𝐎𝐭𝐡𝐞𝐫 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 🛡️\n🌹 ᴛʜᴀɴᴋ ʏᴏᴜ 🌹\n> *@ ᴏꜱʜᴀᴅʜᴀ ᴍᴀɴᴜᴘᴘʀɪʏᴀ* 👑`;
+      let up1 = `╭───────❖🌀❖───────╮
+   ✨  *I MADE OSHIYA MD*  ✨
+
+🤖  *SUPER SPEED BOT*  🔥  
+⚡*BEST MULTI-DEVICE WA BOT*  
+
+🌟  *THAK YOU*  🌟  
+       🎭*-OSHADHA-*🎭
+
+╰───────❖🌀❖───────╯`;
 
       robin.sendMessage(ownerNumber + "@s.whatsapp.net", {
         image: {
