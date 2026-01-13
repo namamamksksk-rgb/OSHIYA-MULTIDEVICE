@@ -11,10 +11,10 @@ cmd({
 async(conn, mek, m, { from, args, isOwner, reply }) => {
 try {
     // 1. Owner ද කියලා check කරනවා
-    if (!isOwner) return reply("සමාවෙන්න, මේක පාවිච්චි කරන්න පුළුවන් බොට්ගේ ඕනර්ට විතරයි! 🚫")
+    if (!isOwner) return reply("*Sorry, only the bot owner can use this*..! 🚫")
 
     // 2. Number එකයි message එකයි තියෙනවද බලනවා
-    if (!args[0]) return reply("Target නම්බර් එක දෙන්න මචං! 📱\nExample: .boom 9475xxxxxxx Hello")
+    if (!args[0]) return reply("*Target Give the number* 📱\n*Example: .boom 9475xxxxxxx Hello*")
     
     let target = args[0].replace(/[^0-9]/g, '') + "@s.whatsapp.net"
     let spamMsg = args.slice(1).join(" ") || "Oshiya MD Boom! 💥"
@@ -29,7 +29,7 @@ try {
         await new Promise(resolve => setTimeout(resolve, 500)) 
     }
 
-    return reply("වැඩේ ඉවරයි! මැසේජ් 20ම යැව්වා. ✅")
+    return reply("*Complete* ✅")
 
 } catch (e) {
     console.log(e)
