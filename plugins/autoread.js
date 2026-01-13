@@ -22,14 +22,14 @@ cmd({
 },
 async (conn, mek, m, { from, q, reply, isOwner }) => {
     // බොට් අයිති උඹට විතරයි මේක කරන්න පුළුවන්
-    if (!isOwner) return reply("සොරි මචං, මේක කරන්න බොට්ගේ අයිතිකාරයා (Owner) වෙන්නම ඕනේ! 🚫")
+    if (!isOwner) return reply("*Sorry man, you have to be the owner of the bot to do this!..*! 🚫")
 
     if (q === "on") {
         autoRead = true
-        return reply("Auto Read Enabled! ✅ දැන් හැම මැසේජ් එකක්ම ඔටෝ රීඩ් වෙයි.")
+        return reply("*Auto Read Enabled* ✅")
     } else if (q === "off") {
         autoRead = false
-        return reply("Auto Read Disabled! ❌ රීඩ් වෙන එක නැවැත්තුවා.")
+        return reply("*Auto Read Disabled* ❌")
     } else {
         return reply("පාවිච්චි කරන විදිහ: \n.read on - ඔන් කරන්න \n.read off - ඕෆ් කරන්න")
     }
