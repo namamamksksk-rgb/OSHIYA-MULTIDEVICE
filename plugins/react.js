@@ -31,14 +31,14 @@ cmd({
 },
 async (conn, mek, m, { from, q, reply, isOwner }) => {
     // බොට් අයිති එකාට විතරයි මේක කරන්න පුළුවන්
-    if (!isOwner) return reply("සොරි මචං, මේක කරන්න බොට්ගේ අයිතිකාරයා (Owner) වෙන්නම ඕනේ! 🚫")
+    if (!isOwner) return reply("*Sorry man, you have to be the owner of the bot to do this*..! 🚫")
 
     if (q === "on") {
         autoReact = true
-        return reply("Auto React Enabled! ✅ දැන් හැම මැසේජ් එකකටම Emoji වැටෙයි.")
+        return reply("*Auto React Enabled* ✅")
     } else if (q === "off") {
         autoReact = false
-        return reply("Auto React Disabled! ❌ වැඩේ නැවැත්තුවා.")
+        return reply("*Auto React Disabled* ❌")
     } else {
         return reply("පාවිච්චි කරන විදිහ: \n.react on - ඔන් කරන්න \n.react off - ඕෆ් කරන්න")
     }
