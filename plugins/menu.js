@@ -34,7 +34,7 @@ try {
 │   ├ .boom <9475xxxxxxx> Hy
 │   ├ .help
 │   ├ .getdp 
-│   ├ .logo
+│   ├ .logo (naruto..)
 │   ├ .wiki 
 │   ├ .song
 │   ├ .video
