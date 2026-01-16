@@ -21,17 +21,18 @@ cmd(
   {
     pattern: "ytmp3",
     alias: ["yta", "song"],
+    react: "🎵",
     desc: "Download YouTube MP3 by name or link",
     category: "download",
     filename: __filename,
   },
   async (bot, mek, m, { from, q, reply }) => {
     try {
-      if (!q) return reply("🎵 Send song name or YouTube link");
+      if (!q) return reply("🎵 *Send song name or YouTube link*");
 
-      reply("🔎 Searching YouTube...");
+      reply("🔎 *Searching YouTube*...");
       const video = await getYoutube(q);
-      if (!video) return reply("❌ No results found");
+      if (!video) return reply("❌ *No results found*");
 
       const caption =
         `🎵 *${video.title}*\n\n` +
@@ -49,10 +50,10 @@ cmd(
         { quoted: mek }
       );
 
-      reply("⬇️ Downloading MP3...");
+      reply("⬇️ *Downloading MP3*...");
 
       const data = await ytmp3(video.url);
-      if (!data?.url) return reply("❌ Failed to download MP3");
+      if (!data?.url) return reply("❌ *Failed to download MP3*");
 
       await bot.sendMessage(
         from,
@@ -73,15 +74,16 @@ cmd(
   {
     pattern: "ytmp4",
     alias: ["ytv", "video"],
+    react: "🎬",
     desc: "Download YouTube MP4 by name or link",
     category: "download",
     filename: __filename,
   },
   async (bot, mek, m, { from, q, reply }) => {
     try {
-      if (!q) return reply("🎬 Send video name or YouTube link");
+      if (!q) return reply("🎬 *Send video name or YouTube link*");
 
-      reply("🔎 Searching YouTube...");
+      reply("🔎 *Searching YouTube*...");
       const video = await getYoutube(q);
       if (!video) return reply("❌ No results found");
 
@@ -102,14 +104,14 @@ cmd(
         { quoted: mek }
       );
 
-      reply("⬇️ Downloading video...");
+      reply("⬇️ *Downloading video*...");
 
       const data = await ytmp4(video.url, {
         format: "mp4",
         videoQuality: "360",
       });
 
-      if (!data?.url) return reply("❌ Failed to download video");
+      if (!data?.url) return reply("❌ *Failed to download video*");
 
 await bot.sendMessage(
   from,
@@ -134,19 +136,20 @@ cmd(
   {
     pattern: "tiktok",
     alias: ["tt"],
+    react: "🧬",
     desc: "Download TikTok video",
     category: "download",
     filename: __filename,
   },
   async (bot, mek, m, { from, q, reply }) => {
     try {
-      if (!q) return reply("📱 Send TikTok link");
+      if (!q) return reply("📱 *Send TikTok link*");
 
-      reply("⬇️ Downloading TikTok video...");
+      reply("⬇️ *Downloading TikTok video*...");
 
       const data = await tiktok(q);
       if (!data?.no_watermark)
-        return reply("❌ Failed to download TikTok video");
+        return reply("❌ *Failed to download TikTok video*");
 
       const caption =
         `🎵 *${data.title || "TikTok Video"}*\n\n` +
