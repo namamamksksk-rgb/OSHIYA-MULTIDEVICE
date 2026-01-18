@@ -1,45 +1,58 @@
 const { cmd } = require("../command");
-const os = require('os');
-const { runtime } = require('../lib/functions');
+const config = require("../config");
+const { speed } = require("performance-now");
 
-cmd({
+cmd(
+  {
     pattern: "ping",
-    alias: ["speed","system"],
-    react: "📶",
-    desc: "Check the bot's super fast speed.",
+    react: "⚡",
+    desc: "Check bot's speed.",
     category: "main",
-    filename: __filename
-},
-async (conn, mek, m, { from, reply }) => {
+    filename: __filename,
+  },
+  async (oshiya, mek, m, { from, pushname }) => {
     try {
-        const startTime = Date.now()
-        const msg = await conn.sendMessage(from, { text: '🚀 *Measuring Speed...*' })
-        const endTime = Date.now()
-        const latency = endTime - startTime
+      // 1. කලින්ම Voice Note එකක් යවනවා 🎙️
+      await oshiya.sendMessage(from, { 
+        audio: { url: 'https://github.com/oshadha12345/images/raw/refs/heads/main/Voice/gata%20only%20(tiktok%20version_best%20part_)%20-%20floyymenor%20ft.%20cris%20mj%E3%80%8Eedit%20audio%E3%80%8F(MP3_160K).mp3' }, 
+        mimetype: 'audio/mp4', 
+        ptt: false
+      }, { quoted: mek });
 
-        // RAM එක බලාගන්න
-        const totalMem = (os.totalmem() / 1024 / 1024 / 1024).toFixed(2)
-        const freeMem = (os.freemem() / 1024 / 1024 / 1024).toFixed(2)
+      const startTime = performance.now();
+      const endTime = performance.now();
+      const pingTime = (endTime - startTime).toFixed(4);
+      const date = new Date().toLocaleDateString();
+      const time = new Date().toLocaleTimeString();
 
-        const pingStatus = latency < 200 ? "🚀 EXTREMELY FAST" : latency < 500 ? "⚡ STABLE" : "🐢 SLOW"
+      // 2. ━━ Style Ping Design
+      let pingText = `━━❮❮ 『 *ASITHA MD PING* 』 ❯❯━━\n\n`;
+      pingText += `┃ 👤 *User:* ${pushname}\n`;
+      pingText += `┃ 👨‍💻 *Owner:* ${config.OWNER_NAME}\n`;
+      pingText += `┃ 🗓️ *Date:* ${date}\n`;
+      pingText += `┃ ⌚ *Time:* ${time}\n`;
+      pingText += `┃ ⚡ *Speed:* ${pingTime} ms\n\n`;
+      pingText += `━━━━━━━━━━━━━━━━━━━━`;
 
-        const responseText = `⚡ *OSHIYA MD PING METER* ⚡
+      const pingImage = 'https://raw.githubusercontent.com/oshadha12345/images/refs/heads/main/oshiyaping.jpg'; 
 
-🛰️ *Latency:* ${latency}ms
-📊 *Status:* ${pingStatus}
+      // 3. Image එකත් එක්ක Channel Forward විදියට යවනවා 🖼️
+      await oshiya.sendMessage(from, {
+        image: { url: pingImage },
+        caption: pingText,
+        contextInfo: {
+          forwardingScore: 999,
+          isForwarded: true,
+          forwardedNewsletterMessageInfo: {
+            newsletterJid: '120363424190990486@newsletter', 
+            newsletterName: 'Oshiya MD Speed Center',
+            serverMessageId: 143
+          }
+        }
+      }, { quoted: mek });
 
-💻 *System Info:*
-- RAM: ${totalMem}GB
-- Free: ${freeMem}GB
-- Platform: ${os.platform()}
-
-👤 *Owner:* Oshadha Manuppriya
-✨ *Mode:* Super Fast 🦾`
-
-        await conn.sendMessage(from, { text: responseText, edit: msg.key })
-
-    } catch (e) {
-        console.log(e)
-        reply("Ping එක බලන්න ගිහින් පොඩි අවුලක් වුණා! ❌")
+    } catch (err) {
+      console.error(err);
     }
-})
+  }
+);
