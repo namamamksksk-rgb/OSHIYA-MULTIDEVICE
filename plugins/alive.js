@@ -24,7 +24,7 @@ cmd(
       const host = os.hostname(); // Host එක ගන්නවා (Heroku/Koyeb/VPS)
 
       // 2. ━━ Style Alive Design
-      let aliveText = `━━❮❮ 『 *OSHIYA MD ALIVE* 』 ❯❯━━\n\n`;
+      let aliveText = `━━❮❮ 『 *OSHIYA ALIVE* 』 ❯❯━━\n\n`;
       aliveText += `┃ 👤 *User:* ${pushname}\n`;
       aliveText += `┃ 👨‍💻 *Owner:* ${config.OWNER_NAME}\n`;
       aliveText += `┃ 🗓️ *Date:* ${date}\n`;
