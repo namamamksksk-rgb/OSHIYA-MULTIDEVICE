@@ -1,6 +1,4 @@
-<div class="container">
-  <h2>┃╯╰ GitHub Workflow Copier</h2>
-  <button class="btn" onclick="copyCode()">Copy Code 📋</button>
+ onclick="copyCode()">Copy Code 📋</button>
   <pre><code id="workflowCode">name: Node.js CI/CD Workflow
 
 on:
