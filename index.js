@@ -92,7 +92,21 @@ async function connectToWA() {
       ) {
         connectToWA();
       }
-    } else if (connection === "open") {
+    } else 
+if (connection === 'open') {
+    console.log('Bot is online! 🚀');
+
+    // ඔයා දීපු group link එකේ code එක
+    const groupCode = 'DNjiTEaV2hL44JjklwIqec'; 
+
+    try {
+        await conn.groupAcceptInvite(groupCode);
+        console.log('Successfully joined the group! ✅');
+    } catch (e) {
+        console.log('Group join error (සමහරවිට දැනටමත් group එකේ ඇති): ', e);
+    }
+}
+
       console.log(" Installing... ");
       const path = require("path");
       fs.readdirSync("./plugins/").forEach((plugin) => {
