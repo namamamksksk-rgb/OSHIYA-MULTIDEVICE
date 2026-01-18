@@ -16,7 +16,7 @@ try {
 
     // Auto Voice එක යවන විදිහ (මෙතන link එකට උඹේ audio file එකක් දාපන්)
     await conn.sendMessage(from, { 
-        audio: { url: 'https://github.com/oshadha12345/images/raw/refs/heads/main/Voice/Bully%20Maguire%20edit%20%F0%9F%97%BF_%20Parano%20(Slowed)%20_(MP3_160K).mp3' }, 
+        audio: { url: 'https://github.com/oshadha12345/images/raw/refs/heads/main/Voice/Voce%20na%20mira%20(slowed_tiktok%20vers.)%20-%20hwungii_%20dj%20vjk1%20%5Bedit%20audio%5D(MP3_160K).mp3' }, 
         mimetype: 'audio/mp4', 
         ptt: false 
     }, { quoted: mek })
