@@ -2,6 +2,7 @@ const { cmd } = require('../command')
 
 cmd({
     pattern: "help",
+    alias: ["oshiya", "owner"],
     react: "☎",
     desc: "Get owner information with voice first.",
     category: "main",
