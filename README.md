@@ -1,4 +1,4 @@
- onclick="copyCode()">Copy Code 📋</button>
+Copy Code 📋</button>
   <pre><code id="workflowCode">name: Node.js CI/CD Workflow
 
 on:
