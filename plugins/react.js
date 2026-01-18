@@ -25,8 +25,9 @@ async (conn, mek, m, { from, body, isMe }) => {
 // ON/OFF කරන කමාන්ඩ් එක (Owner Only)
 cmd({
     pattern: "react",
+    react: "✅",
     desc: "Turn Auto React on or off (Owner Only)",
-    category: "owner",
+    category: "settings",
     filename: __filename
 },
 async (conn, mek, m, { from, q, reply, isOwner }) => {
