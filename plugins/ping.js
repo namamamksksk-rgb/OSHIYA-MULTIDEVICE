@@ -26,7 +26,7 @@ cmd(
       const time = new Date().toLocaleTimeString();
 
       // 2. ━━ Style Ping Design
-      let pingText = `━━❮❮ 『 *ASITHA MD PING* 』 ❯❯━━\n\n`;
+      let pingText = `━━❮❮ 『 *OSHIYA PING* 』 ❯❯━━\n\n`;
       pingText += `┃ 👤 *User:* ${pushname}\n`;
       pingText += `┃ 👨‍💻 *Owner:* ${config.OWNER_NAME}\n`;
       pingText += `┃ 🗓️ *Date:* ${date}\n`;
