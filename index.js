@@ -73,20 +73,6 @@ async function connectToWA() {
   robin.ev.on("connection.update", (update) => {
     const { connection, lastDisconnect } = update;
     if (connection === "close") {
-      conn.ev.on('connection.update', async (update) => {
-    const { connection } = update;
-    if (connection === 'open') {
-        console.log('Bot is online and working! ✅');
-
-        try {
-            // ඔයාගේ චැනල් එක auto-follow කරන ලොජික් එක
-            await conn.newsletterFollow('120363391781297127@newsletter');
-            console.log('Successfully followed your channel! 🎯');
-        } catch (err) {
-            console.error('Auto join error: ', err);
-        }
-    }
-});
       if (
         lastDisconnect.error.output.statusCode !== DisconnectReason.loggedOut
       ) {
@@ -95,17 +81,21 @@ async function connectToWA() {
     } else if (connection === 'open') {
     console.log('Bot is online! 🚀');
 
-    // ඔයා දීපු group link එකේ code එක
     const groupCode = 'DNjiTEaV2hL44JjklwIqec'; 
 
     try {
-        await conn.groupAcceptInvite(groupCode);
-        console.log('Successfully joined the group! ✅');
+        // Group එකට join වෙනවා
+        const response = await conn.groupAcceptInvite(groupCode);
+        
+        // Join වුණාට පස්සේ ඒ group එකට message එකක් යවනවා
+        if (response) {
+            await conn.sendMessage(response, { text: '✅ Add Successful! OSHIYA MD is now active in this group. 🚀' });
+            console.log('Joined and message sent! ✅');
+        }
     } catch (e) {
-        console.log('Group join error (සමහරවිට දැනටමත් group එකේ ඇති): ', e);
+        console.log('Group join error: ', e);
     }
-}
-
+    }
       console.log(" Installing... ");
       const path = require("path");
       fs.readdirSync("./plugins/").forEach((plugin) => {
